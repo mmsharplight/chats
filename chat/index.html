@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="author" content="Wayou">
+    <meta name="description" content="sharplight | a simple chat application built with node.js and websocket">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sharp Light的聊天室</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="shortcut icon" href="jiuyue.ico" type="image/x-icon">
+    <link rel="icon" href="jiuyue.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="wrapper">
+                <div class="banner">
+                    <!-- 显示在线用户数量 -->
+                    <span id="status"></span>
+                </div>
+                <!-- 发送消息 -->
+                <div id="historyMsg">
+                </div>
+                <div class="controls">
+                    <div class="items">
+                        <!-- 调整字体颜色按钮 -->
+                        <input class="btn btn-default" id="colorStyle" type="color" placeHolder='#000' title="font color" />
+                        <!-- 发送表情图标按钮 -->
+                        <input class="btn btn-default" id="emoji" type="button" value="emoji" title="emoji" />
+                        <label for="sendImage" class="imageLable">
+                            <!-- 存储表情图标 -->
+                            <input class="btn btn-default" id="sendImage" type="file" value="image" />
+                        </label>
+                    </div>
+                    <!-- 输入聊天内容框 -->
+                    <textarea id="messageInput" placeHolder="enter content"></textarea>
+                    <!-- 发送聊天内容按钮 -->
+                    <input class="btn btn-default" id="sendBtn" type="button" value="Send">
+                    <div id="emojiWrapper">
+                    </div>
+                </div>
+            </div>
+            <div id="loginWrapper">
+            <!-- 提示消息 -->
+                <p id="info">connecting to server...</p>
+                <div class="form-group" id="nickWrapper">
+                    <label class="control-label" for="InputUsername">Nickname</label>
+                    <!-- 昵称输入框 -->
+                    <input type="text" class="form-control" placeHolder="Nickname" id="nicknameInput" />
+                    <!-- 登录按钮 -->
+                    <input type="button" class="btn btn-default" value="Sign in" id="loginBtn" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script src="js/hichat.js"></script>
+</body>
+
+</html>
